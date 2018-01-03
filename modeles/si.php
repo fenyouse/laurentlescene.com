@@ -6,8 +6,8 @@ class SI {
 
 	//---------- CONSTRUCTEUR PRIVATE
 	private function __construct() {
-		$this->cnx = new PDO('mysql:host=laurentlxollesce.mysql.db; dbname=laurentlxollesce',
-										'laurentlxollesce', 'Laurent991994',
+		$this->cnx = new PDO('127.0.0.1; dbname=sitecv',
+										'root', '',
 										array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES latin1'));
 		$this->cnx->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
