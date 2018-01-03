@@ -41,9 +41,17 @@ h1{
   background-size: 150px;
   background-repeat: repeat;
 }
-
+#inventaire{
+  width: 450px;
+  color: white;
+  font-size: large;
+  background-image: url("../img/backgroundBlack.jpg");
+  background-size: 150px;
+  background-repeat: repeat;
+  margin: 5% auto 5% auto;
+}
 #FichePerso{
-  width: 400px;
+  width: 450px;
   color: white;
   font-size: large;
   background-image: url("../img/backgroundBlack.jpg");

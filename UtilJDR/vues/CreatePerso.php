@@ -71,22 +71,6 @@
            echo('has-error');
          }
          ?>">
-        <label class="sr-only">PMMax</label>
-        <input name="PMMax" type="text" class="form-control" placeholder="PMMax">
-      </div>
-      <div class="form-group
-        <?php if($erreur!=""){
-           echo('has-error');
-         }
-         ?>">
-        <label class="sr-only">PVMax</label>
-        <input name="PVMax" type="text" class="form-control" placeholder="PVMax">
-      </div>
-      <div class="form-group
-        <?php if($erreur!=""){
-           echo('has-error');
-         }
-         ?>">
         <label class="sr-only">Puissance</label>
         <input name="Puissance" type="text" class="form-control" placeholder="Puissance">
       </div>
@@ -114,7 +98,7 @@
         <label class="sr-only">Argent</label>
         <input name="Argent" type="text" class="form-control" placeholder="Argent">
       </div>
-
+      </br></br>
       <input class="btn btn-primary btn-lg btn-block" type="submit" value="Valider" name="Valider"class="bouton" />
     </form>
 </div>

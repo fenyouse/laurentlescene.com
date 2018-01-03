@@ -33,6 +33,11 @@ if(isset($_POST["Inventaire"])) {
   require_once 'controleurs/controleurInventaire.php';
 }
 
+if(isset($_POST["CreateInventaire"])) {
+  $_SESSION['Page']='CreateInventaire';
+  require_once 'controleurs/controleurCreateInventaire.php';
+}
+
 if (isset($_SESSION['Page'])) {
   switch ($_SESSION['Page']) {
     case 'Dés':

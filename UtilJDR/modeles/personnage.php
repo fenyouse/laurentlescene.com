@@ -70,20 +70,17 @@ class personnage extends Element{
   public function getPM(){
 		return $this->getField('PM');
 	}
-  public function getPVMax(){
-		return $this->getField('PVMax');
-	}
   public function getPuissance(){
 		return $this->getField('Puissance');
-	}
-  public function getPMMax(){
-		return $this->getField('PMMax');
 	}
   public function getFinnesse(){
 		return $this->getField('Finnesse');
 	}
-  public function getSocial(){
+	public function getSocial(){
 		return $this->getField('Social');
+	}
+	public function getMental(){
+		return $this->getField('Mental');
 	}
   public function getArgent(){
 		return $this->getField('Argent');
@@ -95,7 +92,7 @@ class personnage extends Element{
 
 	******************************/
 	public static function champID() {return 'Id';}
-	public static function getSELECT() {return 'SELECT Id,Nom,Prenom,Pseudo,Race,Classe,Niveau,PV,PM,PMMax,PVMax,Puissance,Finnesse,Social,Argent FROM personnage';  }
+	public static function getSELECT() {return 'SELECT Id,Nom,Prenom,Pseudo,Race,Classe,Niveau,PV,PM,Puissance,Finnesse,Social,Argent FROM personnage';  }
 
 
 }

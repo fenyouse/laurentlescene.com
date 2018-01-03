@@ -34,6 +34,21 @@ CREATE TABLE armure (
   PRIMARY KEY (Id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE inventaire (
+  Id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  IdArmeCac INTEGER,
+  IdArmeDist INTEGER,
+  IdCasque INTEGER,
+  IdArmure INTEGER,
+  IdBouclier INTEGER,
+  IdSort1 INTEGER,
+  IdSort2 INTEGER,
+  IdSort3 INTEGER,
+  IdSort4 INTEGER,
+  IdSort5 INTEGER,
+  PRIMARY KEY (Id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 CREATE TABLE personnage (
   Id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   Nom varchar(30) NOT NULL,
@@ -44,11 +59,29 @@ CREATE TABLE personnage (
   Niveau int(255),
   PV int(50),
   PM int(50),
-  PMMax int(50),
-  PVMax int(50),
   Puissance int(100),
   Finnesse int(100),
   Social int(100),
+  Mental int(100),
   Argent int(255),
+  IdInventaire INTEGER,
+  PRIMARY KEY (Id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE mob (
+  Id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  Nom varchar(30) NOT NULL,
+  Prenom varchar(30) NOT NULL,
+  Pseudo varchar(30),
+  Race varchar(30),
+  Classe varchar(30),
+  Niveau int(255),
+  PV int(50),
+  PM int(50),
+  Puissance int(100),
+  Finnesse int(100),
+  Social int(100),
+  Mental int(100),
+  IdInventaire INTEGER,
   PRIMARY KEY (Id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
