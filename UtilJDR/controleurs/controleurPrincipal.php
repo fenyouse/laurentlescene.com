@@ -61,6 +61,9 @@ if (isset($_SESSION['Page'])) {
     case 'Inventaire':
       require_once 'controleurs/controleurInventaire.php';
       break;
+    case 'CreateInventaire':
+      require_once 'controleurs/controleurCreateInventaire.php';
+      break;
   }
 }
 ?>

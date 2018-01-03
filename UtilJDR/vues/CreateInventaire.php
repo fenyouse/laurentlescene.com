@@ -3,7 +3,7 @@
     <form class="form-inline" method="post" action="index.php">
 
   	<div class="form-group
-      <?php if($erreur!=""){
+      <?php if($erreurItem!=""){
          echo('has-error');
        }
        ?>">
@@ -11,7 +11,7 @@
         <input type="text" class="form-control" name="Nom" placeholder="Nom">
       </div>
     	<div class="form-group
-        <?php if($erreur!=""){
+        <?php if($erreurItem!=""){
            echo('has-error');
          }
          ?>">
@@ -28,7 +28,7 @@
     <form class="form-inline" method="post" action="index.php">
 
   	   <div class="form-group
-        <?php if($erreur!=""){
+        <?php if($erreurArme!=""){
          echo('has-error');
        }
        ?>">
@@ -36,7 +36,7 @@
           <input type="text" class="form-control" name="Nom" placeholder="Nom">
         </div>
         <div class="form-group
-        <?php if($erreur!=""){
+        <?php if($erreurArme!=""){
            echo('has-error');
          }
          ?>">
@@ -44,7 +44,7 @@
             <input type="text" class="form-control" name="Description" placeholder="Description">
         </div>
         <div class="form-group
-        <?php if($erreur!=""){
+        <?php if($erreurArme!=""){
            echo('has-error');
          }
          ?>">
@@ -52,7 +52,7 @@
             <input type="text" class="form-control" name="DegatDes" placeholder="Degat de dés">
         </div>
         <div class="form-group
-        <?php if($erreur!=""){
+        <?php if($erreurArme!=""){
            echo('has-error');
          }
          ?>">
@@ -69,7 +69,7 @@
     <form class="form-inline" method="post" action="index.php">
 
   	   <div class="form-group
-        <?php if($erreur!=""){
+        <?php if($erreurArmure!=""){
          echo('has-error');
        }
        ?>">
@@ -77,7 +77,7 @@
           <input type="text" class="form-control" name="Nom" placeholder="Nom">
         </div>
         <div class="form-group
-        <?php if($erreur!=""){
+        <?php if($erreurArmure!=""){
            echo('has-error');
          }
          ?>">
@@ -85,7 +85,7 @@
             <input type="text" class="form-control" name="Description" placeholder="Description">
         </div>
         <div class="form-group
-        <?php if($erreur!=""){
+        <?php if($erreurArmure!=""){
            echo('has-error');
          }
          ?>">
@@ -102,7 +102,7 @@
     <form class="form-inline" method="post" action="index.php">
 
   	   <div class="form-group
-        <?php if($erreur!=""){
+        <?php if($erreurSort!=""){
          echo('has-error');
        }
        ?>">
@@ -110,7 +110,7 @@
           <input type="text" class="form-control" name="Nom" placeholder="Nom">
         </div>
         <div class="form-group
-        <?php if($erreur!=""){
+        <?php if($erreurSort!=""){
            echo('has-error');
          }
          ?>">
@@ -118,7 +118,7 @@
             <input type="text" class="form-control" name="PM" placeholder="PM">
         </div>
         <div class="form-group
-        <?php if($erreur!=""){
+        <?php if($erreurSort!=""){
            echo('has-error');
          }
          ?>">
