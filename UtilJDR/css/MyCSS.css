@@ -19,7 +19,7 @@ body {
 }
 
 #title{
-  width: 200px;
+  max-width: 200px;
   height: 80px;
   margin-top: 2%;
   color: white;
@@ -34,7 +34,7 @@ h1{
 }
 
 #des{
-  width: 400px;
+  max-width: 400px;
   color: white;
   font-size: large;
   background-image: url("../img/backgroundBlack.jpg");
@@ -42,7 +42,7 @@ h1{
   background-repeat: repeat;
 }
 #inventaire{
-  width: 450px;
+  max-width: 450px;
   color: white;
   font-size: large;
   background-image: url("../img/backgroundBlack.jpg");
@@ -51,17 +51,17 @@ h1{
   margin: 5% auto 5% auto;
 }
 #FichePerso{
-  width: 450px;
+  max-width: 450px;
   color: white;
   font-size: large;
   background-image: url("../img/backgroundBlack.jpg");
   background-size: 150px;
   background-repeat: repeat;
-  margin: 0 auto 200px auto;
+  margin: 0 auto 20% auto;
 }
 
 #Musique{
-  width: 400px;
+  max-width: 400px;
   color: white;
   font-size: large;
   background-image: url("../img/backgroundBlack.jpg");
