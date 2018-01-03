@@ -6,7 +6,7 @@ class SI {
 
 	//---------- CONSTRUCTEUR PRIVATE
 	private function __construct() {
-		$this->cnx = new PDO('127.0.0.1; dbname=sitecv',
+		$this->cnx = new PDO('mysql:host=127.0.0.1; dbname=sitecv',
 										'root', '',
 										array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES latin1'));
 		$this->cnx->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -31,7 +31,7 @@ class SI {
 		$stmt->execute() ;
 		return $stmt ;
 	}
-	// ecriture d'une methode permetanbt de renvoyer une seule ligne
+	// ecriture d'une methode permetant de renvoyer une seule ligne
 	public function SGBDgetLigne($req,$id){
 		$work = $this->SGBDgetPrepare($req);
 		$work->bindParam(1,$id);
