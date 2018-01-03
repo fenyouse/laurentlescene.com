@@ -69,7 +69,10 @@ class Arme extends Element{
 	public static function champID() {return 'Id';}
 	public static function getSELECT() {return 'SELECT Id,Nom,Description,DegatDes,DegatPrimaire FROM arme';  }
 
-
+	public static function SQLInsert(array $valeurs){
+		$req = 'INSERT INTO arme (Nom,Description,DegatDes,DegatPrimaire) VALUES(?,?,?,?)';
+		return SI::getSI()->SGBDexecuteQuery($req,$valeurs);
+	}
 }
 
 class Armes extends Pluriel{

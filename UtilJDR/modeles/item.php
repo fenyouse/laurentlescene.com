@@ -50,7 +50,7 @@ class Item extends Element{
 	}
 
 	public function getQuantité(){
-		return $this->getField('Quantité');
+		return $this->getField('Quantite');
 	}
 
 
@@ -60,8 +60,12 @@ class Item extends Element{
 
 	******************************/
 	public static function champID() {return 'Id';}
-	public static function getSELECT() {return 'SELECT Id,Nom,Quantité FROM item';  }
+	public static function getSELECT() {return 'SELECT Id,Nom,Quantite FROM item';  }
 
+	public static function SQLInsert(array $valeurs){
+		$req = 'INSERT INTO item (Nom,Quantite) VALUES (?,?)';
+		return SI::getSI()->SGBDexecuteQuery($req,$valeurs);
+	}
 
 }
 

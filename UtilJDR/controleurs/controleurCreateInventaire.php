@@ -1,4 +1,10 @@
 <?php
+require_once 'modeles/inventaire.php';
+require_once 'modeles/arme.php';
+require_once 'modeles/armure.php';
+require_once 'modeles/sort.php';
+require_once 'modeles/item.php';
+
 $erreurItem='';
 $erreurArme='';
 $erreurArmure='';
@@ -7,7 +13,8 @@ $erreurSort='';
 //add Item
 if (isset($_POST['Quantité'])&&isset($_POST['Nom'])) {
   if (($_POST['Quantité']!='')&&($_POST['Nom'])!='') {
-    //add Item
+    $Create = Item::SQLInsert(array($_POST['Nom'],$_POST['Quantité']));
+    var_dump($Create);
   }else {
     $erreurItem='Remplir champs';
   }
@@ -16,7 +23,8 @@ if (isset($_POST['Quantité'])&&isset($_POST['Nom'])) {
 //add Arme
 if (isset($_POST['DegatPrimaire'])&&isset($_POST['Nom'])&&isset($_POST['Description'])&&isset($_POST['DegatDes'])) {
   if (($_POST['DegatPrimaire']!='')&&($_POST['Nom'])!=''&&($_POST['Description'])!=''&&($_POST['DegatDes'])!='') {
-    //add Arme
+      $Create = Arme::SQLInsert(array($_POST['Nom'],$_POST['Description'],$_POST['DegatDes'],$_POST['DegatPrimaire']));
+      var_dump($Create);
   }else {
     $erreurArme='Remplir champs';
   }
@@ -25,7 +33,8 @@ if (isset($_POST['DegatPrimaire'])&&isset($_POST['Nom'])&&isset($_POST['Descript
 //add Armure
 if (isset($_POST['Bouclier'])&&isset($_POST['Description'])&&isset($_POST['Nom'])) {
   if (($_POST['Bouclier'])!=''&&($_POST['Description'])!=''&&($_POST['Nom'])!='') {
-    //add Armure
+    $Create = Armure::SQLInsert(array($_POST['Nom'],$_POST['Description'],$_POST['Bouclier']));
+    var_dump($Create);
   }else {
     $erreurArmure='Remplir champs';
   }
@@ -34,7 +43,8 @@ if (isset($_POST['Bouclier'])&&isset($_POST['Description'])&&isset($_POST['Nom']
 //add Sort
 if (isset($_POST['PM'])&&isset($_POST['Nom'])&&isset($_POST['Degat'])) {
   if (($_POST['PM']!='')&&($_POST['Nom']!='')&&($_POST['Degat']!='')) {
-    //add Sort
+    $Create = Sort::SQLInsert(array($_POST['Nom'],$_POST['Description'],$_POST['PM'],$_POST['Degat']));
+    var_dump($Create);
   }else {
     $erreurSort='Remplir champs';
   }

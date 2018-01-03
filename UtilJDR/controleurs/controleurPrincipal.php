@@ -1,4 +1,6 @@
 <?php
+require_once 'modeles/element.php';
+require_once 'modeles/pluriel.php';
 
 if(isset($_POST["Dés"])) {
   $_SESSION['Page']='Dés';

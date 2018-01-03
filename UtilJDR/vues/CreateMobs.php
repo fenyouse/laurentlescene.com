@@ -95,8 +95,8 @@
            echo('has-error');
          }
          ?>">
-        <label class="sr-only">Argent</label>
-        <input name="Argent" type="text" class="form-control" placeholder="Argent">
+        <label class="sr-only">Mental</label>
+        <input name="Mental" type="text" class="form-control" placeholder="Mental">
       </div>
       </br></br>
       <input class="btn btn-primary btn-lg btn-block" type="submit" value="Valider" name="Valider"class="bouton" />

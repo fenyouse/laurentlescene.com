@@ -8,7 +8,7 @@
     </br>
     <a href="#"><button class="btn btn-primary btn-lg btn-block">e-commerce saroual lauriane</button></a>
     </br>
-    <a href="UtilJDR/"><button class="btn btn-primary btn-lg btn-block">Utilitaire JDR</button></a>
+    <a href="GotoUntilJDR.php"><button class="btn btn-primary btn-lg btn-block">Utilitaire JDR</button></a>
     </br>
     <a href="#"><button class="btn btn-primary btn-lg btn-block">PPE CVL</button></a>
 </div>

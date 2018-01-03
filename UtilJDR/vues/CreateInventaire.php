@@ -110,6 +110,14 @@
           <input type="text" class="form-control" name="Nom" placeholder="Nom">
         </div>
         <div class="form-group
+        <?php if($erreurArme!=""){
+           echo('has-error');
+         }
+         ?>">
+            <label  class="sr-only">Description</label>
+            <input type="text" class="form-control" name="Description" placeholder="Description">
+        </div>
+        <div class="form-group
         <?php if($erreurSort!=""){
            echo('has-error');
          }

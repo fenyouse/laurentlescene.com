@@ -1,7 +1,6 @@
 <?php
 //---------- Classe Suffrage
 
-
 class personnage extends Element{
 
 	//Singleton de mémorisation des instances
@@ -92,9 +91,21 @@ class personnage extends Element{
 
 	******************************/
 	public static function champID() {return 'Id';}
-	public static function getSELECT() {return 'SELECT Id,Nom,Prenom,Pseudo,Race,Classe,Niveau,PV,PM,Puissance,Finnesse,Social,Argent FROM personnage';  }
+	public static function getSELECT() {return 'SELECT Id,Nom,Prenom,Pseudo,Race,Classe,Niveau,PV,PM,Puissance,Finnesse,Social,Argent,IdInventaire FROM personnage';  }
 
+	public static function SQLInsert(array $valeurs){
+		$req = 'INSERT INTO personnage (Nom,Prenom,Pseudo,Race,Classe,Niveau,PV,PM,Puissance,Finnesse,Social,Argent,IdInventaire) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)';
+		return SI::getSI()->SGBDexecuteQuery($req,$valeurs);
+	}
+	public static function lastId(){
+		$req = 'SELECT Id from personnage order by Id desc limit 1;';
+		return SI::getSI()->SGBDgetuneLigne($req);
+	}
 
+	public static function SQLUpdate(array $valeurs){
+		$req = 'UPDATE personnage SET Id=?,Nom=?,Prenom=?,Pseudo=?,Race=?,Classe=?,Niveau=?,PV=?,PM=?,Puissance=?,Finnesse=?,Social=?,Argent=?,IdInventaire=?,WHERE Id=?';
+		return SI::getSI()->SGBDexecuteQuery($req,$valeurs);
+	}
 }
 
 class personnages extends Pluriel{
