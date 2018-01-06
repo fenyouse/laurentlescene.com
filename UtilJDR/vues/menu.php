@@ -5,9 +5,9 @@
     <button  class="btn btn-primary" name="CreatePerso">Création Personnage</button>
     <button  class="btn btn-primary" name="CreateMobs">Création Mobs</button>
     <button  class="btn btn-primary" name="CreateInventaire">Ajouter Item/Sort</button>
-    <button  class="btn btn-primary" name="Inventaire">Inventaire</button>
-    <button  class="btn btn-primary" name="GesPerso">Gestion Personnage</button>
-    <button  class="btn btn-primary" name="GesMobs">Gestion Mobs</button>
+    <button  class="btn btn-primary" name="InventairePerso">Inventaire Personnage</button>
+    <button  class="btn btn-primary" name="InventaireMobs">Inventaire Mobs</button>
+    <button  class="btn btn-primary" name="Partie">Création Partie</button>
   </form>
 </br>
 </center>

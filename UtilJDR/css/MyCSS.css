@@ -27,10 +27,19 @@ body {
   background-image: url("../img/backgroundBlack.jpg");
   background-size: 150px;
   background-repeat: repeat;
+}h1{
+  margin-top: 0;
+
 }
 
-h1{
-  margin-top: 0;
+#minides{
+  color: white;
+  width: auto;
+  height :auto;
+  font-size: large;
+  background-image: url("../img/backgroundBlack.jpg");
+  background-size: 150px;
+  background-repeat: repeat;
 }
 
 #des{

@@ -10,36 +10,31 @@ if(isset($_POST["CreatePerso"])) {
   $_SESSION['Page']='CreatePerso';
   require_once 'controleurs/controleurCreatePerso.php';
 }
-if(isset($_POST["GesPerso"])) {
-  $_SESSION['Page']='GesPerso';
-  require_once 'controleurs/controleurGesPerso.php';
-}
-if(isset($_POST["GesMobs"])) {
-  $_SESSION['GesMobs']='GesMobs';
-  require_once 'controleurs/controleurGesMobs.php';
-}
 if(isset($_POST["CreateMobs"])) {
   $_SESSION['Page']='CreateMobs';
   require_once 'controleurs/controleurCreateMobs.php';
 }
-if(isset($_POST["GesMobs"])) {
-  $_SESSION['Page']='GesMobs';
-  require_once 'controleurs/controleurGesMobs.php';
+if(isset($_POST["InventaireMobs"])) {
+  $_SESSION['Page']='InventaireMobs';
+  require_once 'controleurs/controleurInventaireMobs.php';
 }
 if(isset($_POST["Musique"])) {
   $_SESSION['Page']='Musique';
   require_once 'controleurs/controleurMusique.php';
 }
-if(isset($_POST["Inventaire"])) {
-  $_SESSION['Page']='Inventaire';
-  require_once 'controleurs/controleurInventaire.php';
+if(isset($_POST["InventairePerso"])) {
+  $_SESSION['Page']='InventairePerso';
+  require_once 'controleurs/controleurInventairePerso.php';
 }
 
 if(isset($_POST["CreateInventaire"])) {
   $_SESSION['Page']='CreateInventaire';
   require_once 'controleurs/controleurCreateInventaire.php';
 }
-
+if(isset($_POST["Partie"])) {
+  $_SESSION['Page']='Partie';
+  require_once 'controleurs/controleurPartie.php';
+}
 if (isset($_SESSION['Page'])) {
   switch ($_SESSION['Page']) {
     case 'Dés':
@@ -60,12 +55,21 @@ if (isset($_SESSION['Page'])) {
     case 'Musique':
       require_once 'controleurs/controleurMusique.php';
       break;
-    case 'Inventaire':
-      require_once 'controleurs/controleurInventaire.php';
+    case 'InventaireMobs':
+      require_once 'controleurs/controleurInventaireMobs.php';
+      break;
+    case 'InventairePerso':
+      require_once 'controleurs/controleurInventairePerso.php';
       break;
     case 'CreateInventaire':
       require_once 'controleurs/controleurCreateInventaire.php';
       break;
+    case 'Partie':
+      require_once 'controleurs/controleurPartie.php';
+      break;
   }
+}else {
+  $_SESSION['Page']='Dés';
+  require_once 'controleurs/controleurDes.php';
 }
 ?>

@@ -1,4 +1,4 @@
-<div class="well center-block" id="FichePerso">
+<div class="well center-block text-center" id="FichePerso">
   <h4>Nouveau personnage :</h4>
     <form class="form-inline" method="post" action="index.php">
 
