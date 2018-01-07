@@ -31,6 +31,7 @@ CREATE TABLE armure (
   Nom varchar(10) NOT NULL,
   Description text(256) NOT NULL,
   Bouclier int(50),
+  Type varchar(10) Not NULL,
   PRIMARY KEY (Id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

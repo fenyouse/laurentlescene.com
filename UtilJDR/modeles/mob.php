@@ -82,6 +82,30 @@ class Mob extends Element{
 		return $this->getField('Mental');
 	}
 
+	public function displayRow(){
+		echo '<tr>';
+		echo '<td>'.$this->getNom().'</td>';
+		echo '<td>'.$this->getPrenom().'</td>';
+		echo '<td>'.$this->getPseudo().'</td>';
+		echo '<td>'.$this->getRace().'</td>';
+		echo '<td>'.$this->getClasse().'</td>';
+		echo '<td>'.$this->getNiveau().'</td>';
+		echo '<td>'.$this->getPV().'</td>';
+		echo '<td>'.$this->getPM().'</td>';
+		echo '<td>'.$this->getPuissance().'</td>';
+		echo '<td>'.$this->getFinnesse().'</td>';
+		echo '<td>'.$this->getSocial().'</td>';
+		echo '<td>'.$this->getMental().'</td>';
+		echo '</tr>';
+
+	}
+	public function option(){
+		$tmp = $this->getId();
+		echo '<option value ="'.$tmp.'">';
+		echo $this->getPseudo();
+		echo '</option>';
+
+	}
 
 	/******************************
 	IMSORTANT : 	toute classe dérivée non abstraite doit avoir le code pour
@@ -130,6 +154,39 @@ class Mobs extends Pluriel{
 			$this->doAddObject(Mob::ajouterObjet($uneLigne));
 		}
 	}
+
+	public function displayTable(){
+		echo'<center>';
+		echo'<table class="table table-condensed">';
+		echo'<tr>';
+		echo'<td>Nom</td>';
+		echo'<td>Prenom</td>';
+		echo'<td>Pseudo</td>';
+		echo'<td>Race</td>';
+		echo'<td>Classe</td>';
+		echo'<td>Niveau</td>';
+		echo'<td>PV</td>';
+		echo'<td>PM</td>';
+		echo'<td>Puissance</td>';
+		echo'<td>Finnesse</td>';
+		echo'<td>Social</td>';
+		echo'<td>Mental</td>';
+		echo'</tr>';
+		foreach ($this->getArray() as $unPerso) {
+			$unPerso->displayRow();
+		}
+		echo '</table>';
+		echo'</center>';
+	}
+
+	public function SELECT(){
+		echo'<select name="idSelected">';
+		foreach ($this->getArray() as $unPerso) {
+			$unPerso->option();
+		}
+		echo '</select>';
+	}
+
 
 }
 ?>

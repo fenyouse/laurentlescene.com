@@ -3,7 +3,11 @@
 
     <h4>Choisir un personnage :</h4>
     <form class="form-inline" method="post" action="index.php">
-      //select perso
+      <?php
+      			$lesPerso = new Personnages();
+      			$lesPerso->remplir(NULL,$order=null);
+      			Personnage::getInstances()->SELECT();
+      ?>
       <input class="btn btn-primary btn-lg btn-block" type="submit" value="Valider" name="Valider"class="bouton" />
     </form>
 

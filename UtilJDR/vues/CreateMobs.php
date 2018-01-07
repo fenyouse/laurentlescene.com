@@ -102,3 +102,12 @@
       <input class="btn btn-primary btn-lg btn-block" type="submit" value="Valider" name="Valider"class="bouton" />
     </form>
 </div>
+<div class="well center-block text-center" id="LesPersonnages">
+  <h4>Les Mobs :</h4>
+<?php
+			$lesMobs = new Mobs();
+			$lesMobs->remplir(NULL,$order=null);
+			Mob::getInstances()->displayTable();
+?>
+
+</div>

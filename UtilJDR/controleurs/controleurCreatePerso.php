@@ -12,7 +12,12 @@ if (isset($_POST['PV'])) {
       $lastIdInventaire = Inventaire::lastId()['Id']+1;
       //var_dump($lastIdInventaire);
       $CreteInventaire = Inventaire::SQLInsert(array(NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL));
-      $CreatePerso = Personnage::SQLInsert(array($_POST['Nom'],$_POST['Prenom'],$_POST['Pseudo'],$_POST['Race'],$_POST['Classe'],$_POST['Niveau'],$_POST['PV'],$_POST['PM'],$_POST['Puissance'],$_POST['Finnesse'],$_POST['Social'],$_POST['Mental'],$_POST['Argent'],$lastIdInventaire));
+      //var_dump($lastIdInventaire);
+      $CreatePerso = Personnage::SQLInsert(array($_POST['Nom'],$_POST['Prenom'],$_POST['Pseudo'],
+                                                  $_POST['Race'],$_POST['Classe'],$_POST['Niveau'],
+                                                  $_POST['PV'],$_POST['PM'],$_POST['Puissance'],
+                                                  $_POST['Finnesse'],$_POST['Social'],$_POST['Mental'],
+                                                  $_POST['Argent'],$lastIdInventaire));
       //var_dump($CreteInventaire,$CreatePerso);
 
     }

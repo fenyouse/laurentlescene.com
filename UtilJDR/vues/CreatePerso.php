@@ -110,3 +110,13 @@
       <input class="btn btn-primary btn-lg btn-block" type="submit" value="Valider" name="Valider"class="bouton" />
     </form>
 </div>
+
+<div class="well center-block text-center" id="LesPersonnages">
+  <h4>Les personnages :</h4>
+<?php
+			$lesPerso = new Personnages();
+			$lesPerso->remplir(NULL,$order=null);
+			Personnage::getInstances()->displayTable();
+?>
+
+</div>

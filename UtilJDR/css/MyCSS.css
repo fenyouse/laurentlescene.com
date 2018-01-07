@@ -17,6 +17,17 @@ body {
   background-size: 150px;
   background-repeat: repeat;
 }
+#Partie{
+  width: 1000px;
+  color: gray;
+  font-size: large;
+  background-image: url("../img/backgroundBlack.jpg");
+  background-size: 150px;
+  background-repeat: repeat;
+}
+#Partie:last-of-type{
+  padding-bottom: 100px;
+}
 
 #title{
   max-width: 200px;
@@ -52,21 +63,26 @@ body {
 }
 #inventaire{
   max-width: 450px;
-  color: white;
+  color: gray;
   font-size: large;
   background-image: url("../img/backgroundBlack.jpg");
   background-size: 150px;
   background-repeat: repeat;
   margin: 5% auto 5% auto;
 }
+#inventaire:last-child{
+  padding-bottom: 100px;
+}
 #FichePerso{
   max-width: 450px;
-  color: white;
+  color: gray;
   font-size: large;
   background-image: url("../img/backgroundBlack.jpg");
   background-size: 150px;
   background-repeat: repeat;
   margin: 0 auto 20% auto;
+}#FichePerso:last-child{
+  padding-bottom: 100px;
 }
 
 #Musique{
@@ -76,4 +92,17 @@ body {
   background-image: url("../img/backgroundBlack.jpg");
   background-size: 150px;
   background-repeat: repeat;
+}#Musique:last-child{
+  padding-bottom: 100px;
+}
+
+
+
+#LesPersonnages{
+  color: gray;
+  font-size: large;
+  background-image: url("../img/backgroundBlack.jpg");
+  background-size: 150px;
+  background-repeat: repeat;
+  margin: 0 auto 20% auto;
 }

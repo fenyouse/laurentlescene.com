@@ -2,8 +2,12 @@
 
 
     <h4>Choisir un personnage :</h4>
-    <form class="form-inline" method="post" action="index.php">
-      //select perso
+    <form class="form-inline" method="post" action="http://laurentlescene.com/UtilJDR/index.php?a=3">
+      <?php
+      			$lesPerso = new Personnages();
+      			$lesPerso->remplir(NULL,$order=null);
+      			Personnage::getInstances()->SELECT();
+      ?>
       <input class="btn btn-primary btn-lg btn-block" type="submit" value="Valider" name="Valider"class="bouton" />
     </form>
 

@@ -3,7 +3,11 @@
 
     <h4>Choisir un mob :</h4>
     <form class="form-inline" method="post" action="index.php">
-      //select mob
+      <?php
+      			$lesPerso = new Mobs();
+      			$lesPerso->remplir(NULL,$order=null);
+      			Mob::getInstances()->SELECT();
+      ?>
       <input class="btn btn-primary btn-lg btn-block" type="submit" value="Valider" name="Valider"class="bouton" />
     </form>
 
