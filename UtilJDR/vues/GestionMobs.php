@@ -2,7 +2,7 @@
 
 
     <h4>Choisir un ennemie :</h4>
-    <form id="carform" class="form-inline" method="post" action="http://localhost/laurentlescene.com/UtilJDR/index.php?a=4">
+    <form id="carform" class="form-inline" method="post" action="http://laurentlescene.com/UtilJDR/index.php?a=4">
       <?php
       			$lesMobs = new Mobs();
       			$lesMobs->remplir(null,null);
@@ -24,7 +24,8 @@
   <?php  echo($Mob->getSocial());?>/100
   <p>Mental</p>
   <?php  echo($Mob->getMental());?>/100
-
+  <p>Armure</p>
+  <p>Bouclier</p>
 </div>
 <div class="well center-block text-center" id="inventaire">
   <form method="post">

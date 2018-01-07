@@ -188,7 +188,7 @@ class personnages extends Pluriel{
 	}
 
 	public function SELECT(){
-		echo'<select>';
+		echo'<select name="idSelected">';
 		foreach ($this->getArray() as $unPerso) {
 			$unPerso->option();
 		}

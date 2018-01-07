@@ -10,4 +10,44 @@ require_once 'modeles/personnage.php';
 $erreurSupprItem='';
 $erreurItem='';
 
+
+
+if (!isset($_SESSION['Degat'])) {
+  $_SESSION['Degat']=0;
+}
+if (!isset($_SESSION['MagieUtilise'])) {
+  $_SESSION['MagieUtilise']=0;
+}
+
+if (!isset($_SESSION['idSelected'])) {
+  $_SESSION['idSelected']=1;
+}
+
+
+if (!isset($_SESSION['idSelected'])) {
+  $_SESSION['idSelected']=1;
+}
+if (isset($_POST['idSelected'])) {
+  $_SESSION['idSelected']=$_POST['idSelected'];
+}
+
+
+if (isset($_POST['AddVie'])) {
+  $_SESSION['Degat']=$_SESSION['Degat']-1;
+}
+if (isset($_POST['ConsommeVie'])) {
+  $_SESSION['Degat']=$_SESSION['Degat']+1;
+}
+
+
+if (isset($_POST['AddMagie'])) {
+  $_SESSION['MagieUtilise']=$_SESSION['MagieUtilise']-1;
+}
+if (isset($_POST['ConsommeMagie'])) {
+  $_SESSION['MagieUtilise']=$_SESSION['MagieUtilise']+1;
+}
+
+$Perso= Personnage::mustFind($_SESSION['idSelected']);
+
+
 require_once 'vues/GestionVieMagie.php'; ?>

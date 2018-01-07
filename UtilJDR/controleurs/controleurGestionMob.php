@@ -10,10 +10,10 @@ require_once 'modeles/mob.php';
 
 $erreurSupprItem='';
 $erreurItem='';
+
 if (!isset($_SESSION['Degat'])) {
   $_SESSION['Degat']=0;
 }
-$Degat=$_SESSION['Degat'];
 if (!isset($_SESSION['idSelected'])) {
   $_SESSION['idSelected']=1;
 }

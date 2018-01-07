@@ -5,7 +5,7 @@
     <form class="form-inline" method="post" action="http://laurentlescene.com/UtilJDR/index.php?a=3">
       <?php
       			$lesPerso = new Personnages();
-      			$lesPerso->remplir(NULL,$order=null);
+      			$lesPerso->remplir(null,null);
       			Personnage::getInstances()->SELECT();
       ?>
       <input class="btn btn-primary btn-lg btn-block" type="submit" value="Valider" name="Valider"class="bouton" />
@@ -14,24 +14,57 @@
 
 </div>
 <div class="well center-block text-center" id="inventaire">
+
+  <p>Puissance</p>
+  <?php echo($Perso->getPuissance());?>/100
+  <p>Finnesse</p>
+  <?php  echo($Perso->getFinnesse());?>/100
+  <p>Social</p>
+  <?php  echo($Perso->getSocial());?>/100
+  <p>Mental</p>
+  <?php  echo($Perso->getMental());?>/100
+  <p>Armure</p>
+  <p>Bouclier</p>
+</div>
+<div class="well center-block text-center" id="inventaire">
   <form method="post">
-    <label>Vie : </label>
+    <label>Vie max :
+    <?php
+          echo( $Perso->getPV());
+    ?> </label>
+    </br>
+    <label>Vie actuel :
+    <?php
+          echo( $Perso->getPV()-$_SESSION['Degat']);
+    ?> </label>
     <button  class="btn btn-success" name="AddVie">+</button>
     <button  class="btn btn-danger" name="ConsommeVie">-</button>
   </form>
 </div>
 <div class="well center-block text-center" id="inventaire">
   <form method="post">
-    <label>Magie :</label>
+    <label>Magie max :
+    <?php
+          echo( $Perso->getPM());
+    ?> </label>
+    </br>
+    <label>Magie actuel :
+    <?php
+          echo( $Perso->getPM()-$_SESSION['MagieUtilise']);
+    ?> </label>
     <button  class="btn btn-success" name="AddMagie">+</button>
     <button  class="btn btn-danger" name="ConsommeMagie">-</button>
   </form>
 </div>
 <div class="well center-block text-center" id="inventaire">
   <form method="post">
-    <label>Or :</label>
+    <label>Or  :
+    <?php
+          echo( $Perso->getArgent());
+    ?> </label>
+
+    <input type="text" class="form-control" name="Or" placeholder="Or">
     <button  class="btn btn-success" name="AddOr">+</button>
-    <button  class="btn btn-danger" name="ConsommeOr">-</button>
   </form>
 </div>
 <div class="well center-block text-center" id="inventaire">

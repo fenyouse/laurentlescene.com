@@ -1,14 +1,32 @@
 <?php
 
-
-$GestPerso=array(1);
+if (!isset($_SESSION['NbMobAfficher'])) {
+  $_SESSION['NbPersoAfficher']=array();
+}
+if (isset($_POST['DelPerso'])) {
+  $tmp =$_SESSION['NbPersoAfficher'];
+  array_pop($tmp);
+  $_SESSION['NbPersoAfficher']=$tmp;
+}
 if (isset($_POST['AddPerso'])) {
-  array_push($GestPerso, 2);
+  $tmp =$_SESSION['NbPersoAfficher'];
+  array_push($tmp, 2);
+  $_SESSION['NbPersoAfficher']=$tmp;
 }
 
-$GestMob=array(1);
+if (!isset($_SESSION['NbMobAfficher'])) {
+  $_SESSION['NbMobAfficher']=array();
+}
 if (isset($_POST['AddMobs'])) {
-  array_push($GestMob, 2);
+  $tmp =$_SESSION['NbMobAfficher'];
+  array_push($tmp, 2);
+  $_SESSION['NbMobAfficher']=$tmp;
+}
+
+if (isset($_POST['DelMobs'])) {
+  $tmp =$_SESSION['NbMobAfficher'];
+  array_pop($tmp);
+  $_SESSION['NbMobAfficher']=$tmp;
 }
 
 require_once 'vues/Partie.php'; ?>
