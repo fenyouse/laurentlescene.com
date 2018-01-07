@@ -48,6 +48,6 @@
 
 <div class="well center-block text-center" id="Partie" >
   <p>Gestion Partie</p>
-  <iframe width="300" height="420px" src="http://localhost/laurentlescene.com/UtilJDR?a=1"></iframe>
+  <iframe width="300" height="420px" src="http://laurentlescene.com/UtilJDR?a=1"></iframe>
   <iframe width="300" height="420px" src="http://laurentlescene.com/UtilJDR?a=2"></iframe>
 </div>
