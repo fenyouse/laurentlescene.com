@@ -71,6 +71,23 @@ class Armure extends Element{
 		return SI::getSI()->SGBDexecuteQuery($req,$valeurs);
 	}
 
+	public function displayRow(){
+		echo '<tr>';
+		echo '<td>'.$this->getNom().'</td>';
+		echo '<td>'.$this->getDescription().'</td>';
+		echo '<td>'.$this->getBouclier().'</td>';
+		echo '</tr>';
+
+	}
+
+	public function option(){
+		$tmp = $this->getId();
+		echo '<option value ="'.$tmp.'">';
+		echo $this->getNom();
+		echo '</option>';
+
+	}
+
 }
 
 class Armures extends Pluriel{
@@ -97,6 +114,30 @@ class Armures extends Pluriel{
 		foreach ($curseur as $uneLigne){
 			$this->doAddObject(Arme::ajouterObjet($uneLigne));
 		}
+	}
+
+	public function displayTable(){
+		echo'<center>';
+		echo'<table class="table table-condensed">';
+		echo'<tr>';
+		echo'<td>Nom</td>';
+		echo'<td>Description</td>';
+		echo'<td>Bouclier</td>';
+
+		echo'</tr>';
+		foreach ($this->getArray() as $uneArmure) {
+			$uneArmure->displayRow();
+		}
+		echo '</table>';
+		echo'</center>';
+	}
+
+	public function SELECT(){
+		echo'<select name="idSelected">';
+		foreach ($this->getArray() as $uneArmure) {
+			$uneArmure->option();
+		}
+		echo '</select>';
 	}
 
 }

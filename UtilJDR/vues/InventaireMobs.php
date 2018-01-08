@@ -4,9 +4,7 @@
     <h4>Choisir un mob :</h4>
     <form class="form-inline" method="post" action="index.php">
       <?php
-      			$lesPerso = new Mobs();
-      			$lesPerso->remplir(NULL,$order=null);
-      			Mob::getInstances()->SELECT();
+      		$lesMobs->SELECT();
       ?>
       <input class="btn btn-primary btn-lg btn-block" type="submit" value="Valider" name="Valider"class="bouton" />
     </form>
@@ -18,31 +16,41 @@
 
     <h4>Equiper un casque :</h4>
     <form class="form-inline" method="post" action="index.php">
-      //select casque
+      <?php
+        $lesArmures->SELECT();
+      ?>
       <input class="btn btn-primary btn-lg btn-block" type="submit" value="Valider" name="Valider"class="bouton" />
     </form>
 
     <h4>Equiper une armure :</h4>
     <form class="form-inline" method="post" action="index.php">
-      //select Armure
+      <?php
+      	$lesArmures->SELECT();
+      ?>
       <input class="btn btn-primary btn-lg btn-block" type="submit" value="Valider" name="Valider"class="bouton" />
     </form>
 
     <h4>Equiper une Bouclier :</h4>
     <form class="form-inline" method="post" action="index.php">
-      //select Bouclier
+      <?php
+      	$lesArmures->SELECT();
+      ?>
       <input class="btn btn-primary btn-lg btn-block" type="submit" value="Valider" name="Valider"class="bouton" />
     </form>
 
     <h4>Equiper une arme cac :</h4>
     <form class="form-inline" method="post" action="index.php">
-      //select Arme cac
+      <?php
+      	$lesArmes->SELECT();
+      ?>
       <input class="btn btn-primary btn-lg btn-block" type="submit" value="Valider" name="Valider"class="bouton" />
     </form>
 
     <h4>Equiper une arme dist :</h4>
     <form class="form-inline" method="post" action="index.php">
-      //select Arme dist
+      <?php
+      	$lesArmes->SELECT();
+      ?>
       <input class="btn btn-primary btn-lg btn-block" type="submit" value="Valider" name="Valider"class="bouton" />
     </form>
 
@@ -53,27 +61,35 @@
 
     <h4>Sort 1 :</h4>
     <form class="form-inline" method="post" action="index.php">
-      //select Sort
+      <?php
+      	$lesSorts->SELECT();
+      ?>
       <input class="btn btn-primary btn-lg btn-block" type="submit" value="Valider" name="Valider"class="bouton" />
     </form>
 
     <h4>Sort 2 :</h4>
     <form class="form-inline" method="post" action="index.php">
-      //select Sort
+      <?php
+      	$lesSorts->SELECT();
+      ?>
       <input class="btn btn-primary btn-lg btn-block" type="submit" value="Valider" name="Valider"class="bouton" />
     </form>
 
 
     <h4>Sort 3 :</h4>
     <form class="form-inline" method="post" action="index.php">
-      //select Sort
+      <?php
+      	$lesSorts->SELECT();
+      ?>
       <input class="btn btn-primary btn-lg btn-block" type="submit" value="Valider" name="Valider"class="bouton" />
     </form>
 
 
     <h4>Sort 4 :</h4>
     <form class="form-inline" method="post" action="index.php">
-      //select Sort
+      <?php
+      			Sort::getInstances()->SELECT();
+      ?>
       <input class="btn btn-primary btn-lg btn-block" type="submit" value="Valider" name="Valider"class="bouton" />
     </form>
 
@@ -81,7 +97,9 @@
 
     <h4>Sort 5 :</h4>
     <form class="form-inline" method="post" action="index.php">
-      //select Sort
+      <?php
+            Sort::getInstances()->SELECT();
+      ?>
       <input class="btn btn-primary btn-lg btn-block" type="submit" value="Valider" name="Valider"class="bouton" />
     </form>
 

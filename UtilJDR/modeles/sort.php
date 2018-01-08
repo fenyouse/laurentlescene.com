@@ -73,6 +73,25 @@ class Sort extends Element{
 		$req = 'INSERT INTO sort (Nom,Description,PM,Degat) VALUES(?,?,?,?)';
 		return SI::getSI()->SGBDexecuteQuery($req,$valeurs);
 	}
+
+
+		public function displayRow(){
+			echo '<tr>';
+			echo '<td>'.$this->getNom().'</td>';
+			echo '<td>'.$this->getDescription().'</td>';
+			echo '<td>'.$this->getPM().'</td>';
+			echo '<td>'.$this->getDegat().'</td>';
+			echo '</tr>';
+
+		}
+		public function option(){
+			$tmp = $this->getId();
+			echo '<option value ="'.$tmp.'">';
+			echo $this->getNom();
+			echo '</option>';
+
+		}
+
 }
 
 class Sorts extends Pluriel{
@@ -99,6 +118,31 @@ class Sorts extends Pluriel{
 		foreach ($curseur as $uneLigne){
 			$this->doAddObject(Sort::ajouterObjet($uneLigne));
 		}
+	}
+
+	public function displayTable(){
+		echo'<center>';
+		echo'<table class="table table-condensed">';
+		echo'<tr>';
+		echo'<td>Nom</td>';
+		echo'<td>Description</td>';
+		echo'<td>PM</td>';
+		echo'<td>Degat</td>';
+
+		echo'</tr>';
+		foreach ($this->getArray() as $unSort) {
+			$unSort->displayRow();
+		}
+		echo '</table>';
+		echo'</center>';
+	}
+
+	public function SELECT(){
+		echo'<select name="idSelected">';
+		foreach ($this->getArray() as $unSort) {
+			$unSort->option();
+		}
+		echo '</select>';
 	}
 
 }

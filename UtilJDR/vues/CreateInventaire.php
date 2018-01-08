@@ -16,7 +16,7 @@
          }
          ?>">
           <label  class="sr-only">Quantité</label>
-          <input type="text" class="form-control" name="Quantité" placeholder="Quantité">
+          <input type="text" class="form-control" name="Quantite" placeholder="Quantité">
         </div>
       </br></br>
       <input class="btn btn-primary btn-lg btn-block" type="submit" value="Valider" name="Valider"class="bouton" />

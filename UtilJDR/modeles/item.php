@@ -67,6 +67,21 @@ class Item extends Element{
 		return SI::getSI()->SGBDexecuteQuery($req,$valeurs);
 	}
 
+	public function displayRow(){
+		echo '<tr>';
+		echo '<td>'.$this->getNom().'</td>';
+		echo '<td>'.$this->getQuantité().'</td>';
+		echo '</tr>';
+
+	}
+	public function option(){
+		$tmp = $this->getId();
+		echo '<option value ="'.$tmp.'">';
+		echo ''.$this->getNom()."' '".$this->getQuantité().'';
+		echo '</option>';
+
+	}
+
 }
 
 class Items extends Pluriel{
@@ -95,5 +110,28 @@ class Items extends Pluriel{
 		}
 	}
 
+
+		public function displayTable(){
+			echo'<center>';
+			echo'<table class="table table-condensed">';
+			echo'<tr>';
+			echo'<td>Nom</td>';
+			echo'<td>Quantite</td>';
+
+			echo'</tr>';
+			foreach ($this->getArray() as $unItem) {
+				$unItem->displayRow();
+			}
+			echo '</table>';
+			echo'</center>';
+		}
+
+		public function SELECT(){
+			echo'<select name="idSelected">';
+			foreach ($this->getArray() as $unItem) {
+				$unItem->option();
+			}
+			echo '</select>';
+		}
 }
 ?>

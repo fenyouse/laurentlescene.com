@@ -11,9 +11,9 @@ $erreurArmure='';
 $erreurSort='';
 
 //add Item
-if (isset($_POST['Quantité'])&&isset($_POST['Nom'])) {
-  if (($_POST['Quantité']!='')&&($_POST['Nom'])!='') {
-    $Create = Item::SQLInsert(array($_POST['Nom'],$_POST['Quantité']));
+if (isset($_POST['Quantite'])&&isset($_POST['Nom'])) {
+  if (($_POST['Quantite']!='')&&($_POST['Nom'])!='') {
+    $Create = Item::SQLInsert(array($_POST['Nom'],$_POST['Quantite']));
     var_dump($Create);
   }else {
     $erreurItem='Remplir champs';

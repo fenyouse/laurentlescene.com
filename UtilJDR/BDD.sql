@@ -4,7 +4,7 @@ SET time_zone = "+00:00";
 CREATE TABLE item (
   Id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   Nom varchar(50) NOT NULL,
-  Quantité int(10) DEFAULT 1,
+  Quantite int(10) DEFAULT 1,
   PRIMARY KEY (Id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -31,7 +31,6 @@ CREATE TABLE armure (
   Nom varchar(10) NOT NULL,
   Description text(256) NOT NULL,
   Bouclier int(50),
-  Type varchar(10) Not NULL,
   PRIMARY KEY (Id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
