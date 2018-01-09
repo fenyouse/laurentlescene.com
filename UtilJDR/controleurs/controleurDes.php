@@ -1,11 +1,12 @@
 <?php
 
-$des4 = Rand(0,4);
-$des6 = Rand(0,6);
-$des8 = Rand(0,8);
-$des10 = Rand(0,10);
-$des12 = Rand(0,12);
-$des100 = Rand(0,100);
+$des4 = Rand(1,4);
+$des6 = Rand(1,6);
+$des8 = Rand(1,8);
+$des10 = Rand(1,10);
+$des12 = Rand(1,12);
+$des20 = Rand(1,20);
+$des100 = Rand(1,100);
 if (isset($_GET['a'])) {
   require_once 'vues/miniDes.php';
 }else {

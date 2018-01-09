@@ -112,7 +112,7 @@ class Armures extends Pluriel{
 		$curseur = SI::getSI()->SGBDgetPrepareExecute($req);
 		//var_dumS($curseur);
 		foreach ($curseur as $uneLigne){
-			$this->doAddObject(Arme::ajouterObjet($uneLigne));
+			$this->doAddObject(Armure::ajouterObjet($uneLigne));
 		}
 	}
 

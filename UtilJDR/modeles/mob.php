@@ -36,8 +36,38 @@ class Mob extends Element{
 		return static::ajouterObjet($ligne);
 	}
 
+		// gestion de la vie
+	private $Degat;
+
+	public function getDegat() {
+		if ($this->Degat ===null) {
+			$this->Degat = 0;
+		}
+		return $this->Degat;
+	}
+	public function setDegat($mob) {
+			$this->Degat = $mob;
+
+		return $this->Degat;
+	}
+
+	public function addDegat() {
+		//var_dump($this->Degat);
+		$this->Degat = $this->Degat + 1;
+
+		//var_dump($this->Degat);
+		return $this->Degat;
+	}
+
+	public function removeDegat() {
+		//var_dump($this->Degat);
+		$this->Degat = $this->Degat - 1;
+		//var_dump($this->Degat);
+		return $this->Degat;
+	}
+
 	//---------- constructeur : repose sur le constructeur parent
-	protected function __construct($theLigne) {parent::__construct($theLigne);}
+	protected function __construct($theLigne) {parent::__construct($theLigne);$this->Degat = 0;}
 
 	//---------- renvoie la valeur du champ spécifié en patamètre
 	public function getId(){
