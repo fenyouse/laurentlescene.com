@@ -62,23 +62,23 @@ class SI {
 			if ($tberr[0]=='00000') {
 				$tmp = $work->rowCount();
 				if ($tmp==0) {
-					$R = array(	'pgstatus' => 0,
-									'pgerror' => 0,
-									'pgcomment' => 'aucune information modifiée');
+					$R = array(	'status' => 0,
+									'error' => 0,
+									'comment' => 'aucune information modifiée');
 				} else {
-					$R = array(	'pgstatus' => $tmp,
-									'pgerror' => 0,
-									'pgcomment' => "l'opération a affecté $tmp occurrence(s)");
+					$R = array(	'status' => $tmp,
+									'error' => 0,
+									'comment' => "l'opération a affecté $tmp occurrence(s)");
 				}
 			} else {
-				$R = array(	'pgstatus' => -1,
-								'pgerror' => $tberr[0],
-								'pgcomment' => $tberr[2]);
+				$R = array(	'status' => -1,
+								'error' => $tberr[0],
+								'comment' => $tberr[2]);
 			}
 		} catch (Exception $e) {
-				$R = array(	'pgstatus' => -3,
-								'pgerror' => 0,
-								'pgcomment' => $e->getMessage());
+				$R = array(	'status' => -3,
+								'error' => 0,
+								'comment' => $e->getMessage());
 		}
 		return $R;
 	}

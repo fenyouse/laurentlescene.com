@@ -16,8 +16,6 @@ $lesMobs->remplir(null,null);
 
 
 
-
-
 if (isset($_POST['idSelected'])) {
   $_SESSION['idSelected'] = $_POST['idSelected'];
   $Mob= Mob::mustFind($_POST['idSelected']);

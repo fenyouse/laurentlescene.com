@@ -29,7 +29,7 @@ require_once 'modeles/si.php';
 $MonSI = SI::getSI();
 //var_dump($MonSI);//montrer l'id de l'objet
 //var_dump($_SESSION);
-
+//var_dump($_POST);
 
   if (isset($_GET['a'])) {
     switch ($_GET['a']) {

@@ -7,9 +7,7 @@ $des10 = Rand(1,10);
 $des12 = Rand(1,12);
 $des20 = Rand(1,20);
 $des100 = Rand(1,100);
-if (isset($_GET['a'])) {
-  require_once 'vues/miniDes.php';
-}else {
+
   require_once 'vues/Des.php';
-}
+
  ?>

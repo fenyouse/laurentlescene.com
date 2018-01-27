@@ -1,6 +1,10 @@
 
 <div class="well center-block text-center" id="inventaire">
 
+
+  <p>Pseudo</p>
+  <?php echo($Mob->getPseudo());?>
+
   <p>Puissance</p>
   <?php echo($Mob->getPuissance());?>/100
   <p>Finnesse</p>

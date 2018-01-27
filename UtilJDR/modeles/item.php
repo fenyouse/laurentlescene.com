@@ -45,6 +45,10 @@ class Item extends Element{
 		return $this->getField('Id');
 	}
 
+	public function getIdUser(){
+		return $this->getField('IdUser');
+	}
+
 	public function getNom(){
 		return $this->getField('Nom');
 	}

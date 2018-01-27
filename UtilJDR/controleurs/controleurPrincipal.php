@@ -35,6 +35,23 @@ if(isset($_POST["Partie"])) {
   $_SESSION['Page']='Partie';
   require_once 'controleurs/controleurPartie.php';
 }
+if(isset($_POST["Connexion"])) {
+  $_SESSION['Page']='Connexion';
+  require_once 'controleurs/controleurConnexion.php';
+}
+if(isset($_POST["Deconnexion"])) {
+  session_destroy();
+  header ('Location:index.php');
+}
+if(isset($_POST["Inscription"])) {
+  $_SESSION['Page']='Inscription';
+  require_once 'controleurs/controleurInscription.php';
+}
+if(isset($_POST["GestionCompte"])) {
+  $_SESSION['Page']='GestionCompte';
+  require_once 'controleurs/controleurGestionUser.php';
+}
+
 if (isset($_SESSION['Page'])) {
   switch ($_SESSION['Page']) {
     case 'Dés':
@@ -66,6 +83,12 @@ if (isset($_SESSION['Page'])) {
       break;
     case 'Partie':
       require_once 'controleurs/controleurPartie.php';
+      break;
+    case 'Inscription':
+      require_once 'controleurs/controleurInscription.php';
+      break;
+    case 'Connexion':
+      require_once 'controleurs/controleurConnexion.php';
       break;
   }
 }else {

@@ -45,6 +45,10 @@ class Arme extends Element{
 		return $this->getField('Id');
 	}
 
+	public function getIdUser(){
+		return $this->getField('IdUser');
+	}
+
 	public function getNom(){
 		return $this->getField('Nom');
 	}
@@ -136,7 +140,7 @@ class Armes extends Pluriel{
 	}
 
 	public function SELECT(){
-		echo'<select name="idSelected">';
+		echo'<select name="armeSelected">';
 		foreach ($this->getArray() as $uneArme) {
 			$uneArme->option();
 		}

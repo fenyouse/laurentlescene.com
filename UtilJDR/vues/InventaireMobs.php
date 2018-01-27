@@ -1,3 +1,5 @@
+
+
 <div class="well center-block text-center" id="inventaire" >
 
 

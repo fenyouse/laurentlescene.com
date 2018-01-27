@@ -93,6 +93,9 @@ class Mob extends Element{
   public function getNiveau(){
 		return $this->getField('Niveau');
 	}
+  public function getExperience(){
+		return $this->getField('Experience');
+	}
   public function getPV(){
 		return $this->getField('PV');
 	}

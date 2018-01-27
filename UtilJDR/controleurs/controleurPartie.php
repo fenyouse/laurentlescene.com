@@ -3,6 +3,8 @@
 if (!isset($_SESSION['NbMobAfficher'])) {
   $_SESSION['NbPersoAfficher']=array();
 }
+
+
 if (isset($_POST['DelPerso'])) {
   $tmp =$_SESSION['NbPersoAfficher'];
   array_pop($tmp);

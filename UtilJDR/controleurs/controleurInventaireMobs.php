@@ -19,7 +19,6 @@ $lesArmes = new Armes();
 $lesArmes->remplir(null,null);
 
 
-
 $lesSorts = new Sorts();
 $lesSorts->remplir(null,null);
 

@@ -36,12 +36,71 @@ class personnage extends Element{
 		return static::ajouterObjet($ligne);
 	}
 
+	private $Degat;
+
+	public function getDegat() {
+		if ($this->Degat ===null) {
+			$this->Degat = 0;
+		}
+		return $this->Degat;
+	}
+	public function setDegat($mob) {
+			$this->Degat = $mob;
+
+		return $this->Degat;
+	}
+
+	public function addDegat() {
+		//var_dump($this->Degat);
+		$this->Degat = $this->Degat + 1;
+
+		//var_dump($this->Degat);
+		return $this->Degat;
+	}
+
+	public function removeDegat() {
+		//var_dump($this->Degat);
+		$this->Degat = $this->Degat - 1;
+		//var_dump($this->Degat);
+		return $this->Degat;
+	}
+
+	private $DegatMagie;
+
+	public function getDegatMagie() {
+		if ($this->DegatMagie ===null) {
+			$this->DegatMagie = 0;
+		}
+		return $this->DegatMagie;
+	}
+	public function setDegatMagie($perso) {
+			$this->DegatMagie = $perso;
+		return $this->DegatMagie;
+	}
+
+	public function addDegatMagie() {
+		$this->DegatMagie = $this->DegatMagie + 1;
+		return $this->DegatMagie;
+	}
+
+	public function removeDegatMagie() {
+		$this->DegatMagie = $this->DegatMagie - 1;
+		return $this->DegatMagie;
+	}
+
+
+
+
 	//---------- constructeur : repose sur le constructeur parent
-	protected function __construct($theLigne) {parent::__construct($theLigne);}
+	protected function __construct($theLigne) {parent::__construct($theLigne);$this->Degat = 0;$this->DegatMagie = 0;}
 
 	//---------- renvoie la valeur du champ spécifié en patamètre
 	public function getId(){
 		return $this->getField('Id');
+	}
+
+	public function getIdUser(){
+		return $this->getField('IdUser');
 	}
 
 	public function getNom(){
@@ -81,8 +140,20 @@ class personnage extends Element{
 	public function getMental(){
 		return $this->getField('Mental');
 	}
-  public function getArgent(){
+	public function getArgent(){
 		return $this->getField('Argent');
+	}
+	public function getExperience(){
+		return $this->getField('Experience');
+	}
+
+	public function getIdInventaire(){
+		return $this->getField('IdInventaire');
+	}
+
+	public function getInventaire(){
+		$inventaire = inventaire::mustFind($this->getField('IdInventaire'));
+		return $inventaire;
 	}
 
 
@@ -95,6 +166,7 @@ class personnage extends Element{
 		echo '<td>'.$this->getRace().'</td>';
 		echo '<td>'.$this->getClasse().'</td>';
 		echo '<td>'.$this->getNiveau().'</td>';
+		echo '<td>'.$this->getExperience().'</td>';
 		echo '<td>'.$this->getPV().'</td>';
 		echo '<td>'.$this->getPM().'</td>';
 		echo '<td>'.$this->getPuissance().'</td>';
@@ -118,21 +190,32 @@ class personnage extends Element{
 
 	******************************/
 	public static function champID() {return 'Id';}
-	public static function getSELECT() {return 'SELECT Id,Nom,Prenom,Pseudo,Race,Classe,Niveau,PV,PM,Puissance,Finnesse,Social,Mental,Argent,IdInventaire FROM personnage';  }
+	public static function getSELECT() {return 'SELECT Id,Nom,Prenom,Pseudo,Race,Classe,Niveau,Experience,PV,PM,Puissance,Finnesse,Social,Mental,Argent,IdInventaire FROM personnage';  }
 
 	public static function SQLInsert(array $valeurs){
 		$req = 'INSERT INTO personnage (Nom,Prenom,Pseudo,Race,Classe,Niveau,PV,PM,Puissance,Finnesse,Social,Mental,Argent,IdInventaire) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
 		return SI::getSI()->SGBDexecuteQuery($req,$valeurs);
 	}
+
+	public static function SQLUpdate(array $valeurs){
+		$req = 'UPDATE personnage SET Id=?,Nom=?,Prenom=?,Pseudo=?,Race=?,Classe=?,Niveau=?,Experience=?,PV=?,PM=?,Puissance=?,Finnesse=?,Social=?,Argent=?,IdInventaire=?,WHERE Id=?';
+		return SI::getSI()->SGBDexecuteQuery($req,$valeurs);
+	}
+
+
 	public static function lastId(){
 		$req = 'SELECT Id from personnage order by Id desc limit 1;';
 		return SI::getSI()->SGBDgetuneLigne($req);
 	}
-
-	public static function SQLUpdate(array $valeurs){
-		$req = 'UPDATE personnage SET Id=?,Nom=?,Prenom=?,Pseudo=?,Race=?,Classe=?,Niveau=?,PV=?,PM=?,Puissance=?,Finnesse=?,Social=?,Argent=?,IdInventaire=?,WHERE Id=?';
+	public static function AddOr(array $valeurs){
+		$req = 'UPDATE personnage SET Argent=? WHERE Id=?';
 		return SI::getSI()->SGBDexecuteQuery($req,$valeurs);
 	}
+	public static function AddExperience(array $valeurs){
+		$req = 'UPDATE personnage SET Experience=? WHERE Id=?';
+		return SI::getSI()->SGBDexecuteQuery($req,$valeurs);
+	}
+
 }
 
 class personnages extends Pluriel{
@@ -172,6 +255,7 @@ class personnages extends Pluriel{
 		echo'<td>Race</td>';
 		echo'<td>Classe</td>';
 		echo'<td>Niveau</td>';
+		echo'<td>Experience</td>';
 		echo'<td>PV</td>';
 		echo'<td>PM</td>';
 		echo'<td>Puissance</td>';
