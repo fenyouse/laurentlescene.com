@@ -17,7 +17,7 @@ if (isset($_POST['PV'])) {
                                                   $_POST['Race'],$_POST['Classe'],$_POST['Niveau'],
                                                   $_POST['PV'],$_POST['PM'],$_POST['Puissance'],
                                                   $_POST['Finnesse'],$_POST['Social'],$_POST['Mental'],
-                                                  $_POST['Argent'],$lastIdInventaire));
+                                                  $_POST['Argent'],$lastIdInventaire,$_SESSION['User']));
       //var_dump($CreteInventaire,$CreatePerso);
 
     }

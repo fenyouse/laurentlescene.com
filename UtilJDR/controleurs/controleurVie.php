@@ -11,7 +11,7 @@ $erreurSupprItem='';
 $erreurItem='';
 
 $lesPerso = new Personnages();
-$lesPerso->remplir(null,null);
+$lesPerso->remplir('IdUser='.$_SESSION['User'],null);
 
 if (isset($_POST['idSelected'])) {
   $_SESSION['idSelected'] = $_POST['idSelected'];

@@ -64,7 +64,7 @@ class Item extends Element{
 
 	******************************/
 	public static function champID() {return 'Id';}
-	public static function getSELECT() {return 'SELECT Id,Nom,Quantite FROM item';  }
+	public static function getSELECT() {return 'SELECT Id,Nom,Quantite,IdUser FROM item';  }
 
 	public static function SQLInsert(array $valeurs){
 		$req = 'INSERT INTO item (Nom,Quantite) VALUES (?,?)';

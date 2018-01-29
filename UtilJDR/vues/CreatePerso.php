@@ -115,7 +115,7 @@
   <h4>Les personnages :</h4>
 <?php
 			$lesPerso = new Personnages();
-			$lesPerso->remplir(NULL,$order=null);
+			$lesPerso->remplir('IdUser='.$_SESSION['User'],$order=null);
 			Personnage::getInstances()->displayTable();
 ?>
 

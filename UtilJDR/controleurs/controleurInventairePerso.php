@@ -9,19 +9,19 @@ require_once 'modeles/sort.php';
 $erreur='';
 
 $lesPerso = new Personnages();
-$lesPerso->remplir(NULL,null);
+$lesPerso->remplir('IdUser='.$_SESSION['User'],null);
 
 
 $lesArmures = new Armures();
-$lesArmures->remplir(null,null);
+$lesArmures->remplir('IdUser='.$_SESSION['User'],null);
 
 
 $lesArmes = new Armes();
-$lesArmes->remplir(null,null);
+$lesArmes->remplir('IdUser='.$_SESSION['User'],null);
 
 
 $lesSorts = new Sorts();
-$lesSorts->remplir(null,null);
+$lesSorts->remplir('IdUser='.$_SESSION['User'],null);
 
 if (isset($_POST['idSelected'])) {
   $_SESSION['idSelected'] = $_POST['idSelected'];

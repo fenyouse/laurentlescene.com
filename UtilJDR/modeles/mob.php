@@ -115,6 +115,9 @@ class Mob extends Element{
 		return $this->getField('Mental');
 	}
 
+	public function getIdUser(){
+		return $this->getField('IdUser');
+	}
 	public function displayRow(){
 		echo '<tr>';
 		echo '<td>'.$this->getNom().'</td>';
@@ -145,10 +148,10 @@ class Mob extends Element{
 
 	******************************/
 	public static function champID() {return 'Id';}
-	public static function getSELECT() {return 'SELECT Id,Nom,Prenom,Pseudo,Race,Classe,Niveau,PV,PM,Puissance,Finnesse,Social,Mental,IdInventaire FROM mob';  }
+	public static function getSELECT() {return 'SELECT Id,IdUser,Nom,Prenom,Pseudo,Race,Classe,Niveau,PV,PM,Puissance,Finnesse,Social,Mental,IdInventaire FROM mob';  }
 
   public static function SQLInsert(array $valeurs){
-		$req = 'INSERT INTO mob (Nom,Prenom,Pseudo,Race,Classe,Niveau,PV,PM,Puissance,Finnesse,Social,Mental,IdInventaire) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)';
+		$req = 'INSERT INTO mob (Nom,Prenom,Pseudo,Race,Classe,Niveau,PV,PM,Puissance,Finnesse,Social,Mental,IdInventaire,IdUser) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
 		return SI::getSI()->SGBDexecuteQuery($req,$valeurs);
 	}
 	public static function lastId(){

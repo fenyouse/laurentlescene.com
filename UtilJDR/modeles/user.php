@@ -75,28 +75,25 @@ class User extends Element{
 
 	public static function UpdatePassword($login,$oldMdp,$newMdp){
 		$valeurs = array(md5($newMdp),$login,md5($oldMdp));
-		//var_dump($valeurs);
 		$requete = "UPDATE user SET Mdp= ? WHERE Email =? AND Mdp=?";
 		$result = SI::getSI()->SGBDexecuteQuery($requete,$valeurs);
 		return $result;
 	}
 
   public static function Inscription($login,$mdp,$nom,$prenom){
+
   	$valeurs = array($nom,$prenom,md5($mdp),$login);
-    var_dump($valeurs);
-    $requete =static::getSELECT()." where Email =".$login;
-		$ligne = SI::getSI()->SGBDgetuneLigne($requete);
-		if($ligne == null){return null;}
-    $tmp = static::ajouterObjet($ligne);
-    var_dump($tmp);
     $req = 'INSERT INTO user (Nom, Prenom, Mdp, Email) VALUES(?,?,?,?)';
 		return SI::getSI()->SGBDexecuteQuery($req,$valeurs);
 
-
-
-
-
 	}
+  public static function TestLogin($login){
+    $requete =static::getSELECT()." where Email ='".$login."'";
+		$ligne = SI::getSI()->SGBDgetuneLigne($requete);
+		if($ligne == null){return null;}
+
+		return $ligne;
+  }
 
 
 	/******************************
@@ -163,6 +160,4 @@ class Users extends Pluriel{
 
 
 }
-?>
-
 ?>

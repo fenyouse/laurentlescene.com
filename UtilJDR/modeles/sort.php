@@ -71,10 +71,10 @@ class Sort extends Element{
 
 	******************************/
 	public static function champID() {return 'Id';}
-	public static function getSELECT() {return 'SELECT Id,Nom,Description,PM,Degat FROM sort';  }
+	public static function getSELECT() {return 'SELECT Id,IdUser,Nom,Description,PM,Degat FROM sort';  }
 
 	public static function SQLInsert(array $valeurs){
-		$req = 'INSERT INTO sort (Nom,Description,PM,Degat) VALUES(?,?,?,?)';
+		$req = 'INSERT INTO sort (Nom,Description,PM,Degat,IdUser) VALUES(?,?,?,?,?)';
 		return SI::getSI()->SGBDexecuteQuery($req,$valeurs);
 	}
 

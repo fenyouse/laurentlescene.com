@@ -14,7 +14,7 @@ if (isset($_POST['PV'])) {
       $CreteInventaire = Inventaire::SQLInsert(array(NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL));
       $CreateMob = Mob::SQLInsert(array($_POST['Nom'],$_POST['Prenom'],$_POST['Pseudo'],$_POST['Race'],$_POST['Classe'],
                                         $_POST['Niveau'],$_POST['PV'],$_POST['PM'],$_POST['Puissance'],$_POST['Finnesse'],
-                                        $_POST['Social'],$_POST['Mental'],$lastIdInventaire));
+                                        $_POST['Social'],$_POST['Mental'],$lastIdInventaire,$_SESSION['User']));
       //var_dump($CreteInventaire,$CreateMob);
     }
   }else {

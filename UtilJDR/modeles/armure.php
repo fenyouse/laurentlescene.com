@@ -61,17 +61,15 @@ class Armure extends Element{
 		return $this->getField('Bouclier');
 	}
 
-
-
 	/******************************
 	IMSORTANT : 	toute classe dérivée non abstraite doit avoir le code pour
 
 	******************************/
 	public static function champID() {return 'Id';}
-	public static function getSELECT() {return 'SELECT Id,Nom,Description,Bouclier FROM armure';  }
+	public static function getSELECT() {return 'SELECT Id,IdUser,Nom,Description,Bouclier FROM armure';  }
 
 	public static function SQLInsert(array $valeurs){
-		$req = 'INSERT INTO armure (Nom,Description,Bouclier) VALUES(?,?,?)';
+		$req = 'INSERT INTO armure (Nom,Description,Bouclier,IdUser) VALUES(?,?,?,?)';
 		return SI::getSI()->SGBDexecuteQuery($req,$valeurs);
 	}
 

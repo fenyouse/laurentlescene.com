@@ -190,10 +190,11 @@ class personnage extends Element{
 
 	******************************/
 	public static function champID() {return 'Id';}
-	public static function getSELECT() {return 'SELECT Id,Nom,Prenom,Pseudo,Race,Classe,Niveau,Experience,PV,PM,Puissance,Finnesse,Social,Mental,Argent,IdInventaire FROM personnage';  }
+	public static function getSELECT() {return 'SELECT Id,IdUser,Nom,Prenom,Pseudo,Race,Classe,Niveau,Experience,PV,PM,Puissance,Finnesse,Social,Mental,Argent,IdInventaire FROM personnage';  }
 
 	public static function SQLInsert(array $valeurs){
-		$req = 'INSERT INTO personnage (Nom,Prenom,Pseudo,Race,Classe,Niveau,PV,PM,Puissance,Finnesse,Social,Mental,Argent,IdInventaire) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+		$req = 'INSERT INTO personnage (Nom,Prenom,Pseudo,Race,Classe,Niveau,PV,PM,Puissance,Finnesse,Social,Mental,Argent,IdInventaire,IdUser) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+		var_dump($req);
 		return SI::getSI()->SGBDexecuteQuery($req,$valeurs);
 	}
 

@@ -9,18 +9,18 @@ $erreur='';
 
 
 $lesMobs = new Mobs();
-$lesMobs->remplir(null,null);
+$lesMobs->remplir('IdUser='.$_SESSION['User'],null);
 
 $lesArmures = new Armures();
-$lesArmures->remplir(null,null);
+$lesArmures->remplir('IdUser='.$_SESSION['User'],null);
 
 
 $lesArmes = new Armes();
-$lesArmes->remplir(null,null);
+$lesArmes->remplir('IdUser='.$_SESSION['User'],null);
 
 
 $lesSorts = new Sorts();
-$lesSorts->remplir(null,null);
+$lesSorts->remplir('IdUser='.$_SESSION['User'],null);
 
 
  require_once 'vues/InventaireMobs.php'; ?>

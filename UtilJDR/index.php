@@ -28,7 +28,7 @@ require_once 'modeles/si.php';
 //recupération du SI, le seul le singleton
 $MonSI = SI::getSI();
 //var_dump($MonSI);//montrer l'id de l'objet
-//var_dump($_SESSION);
+var_dump($_SESSION);
 //var_dump($_POST);
 
   if (isset($_GET['a'])) {
@@ -49,14 +49,14 @@ $MonSI = SI::getSI();
 
 
   }else {
-    require_once 'vues/header.php';
+    require_once 'vues/layout/header.php';
     require_once 'modeles/Mobile_Detect.php';
 
 
     require_once 'controleurs/controleurPrincipal.php';
     $detect = new Mobile_Detect;
     if (!$detect->isMobile()) {
-      require_once 'vues/footer.php';
+      require_once 'vues/layout/footer.php';
     }
   }
 

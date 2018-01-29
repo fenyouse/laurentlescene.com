@@ -12,7 +12,7 @@ $erreurSupprItem='';
 $erreurItem='';
 
 $lesMobs = new Mobs();
-$lesMobs->remplir(null,null);
+$lesMobs->remplir('IdUser='.$_SESSION['User'],null);
 
 
 

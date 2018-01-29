@@ -65,16 +65,15 @@ class Arme extends Element{
 		return $this->getField('DegatPrimaire');
 	}
 
-
 	/******************************
 	IMSORTANT : 	toute classe dérivée non abstraite doit avoir le code pour
 
 	******************************/
 	public static function champID() {return 'Id';}
-	public static function getSELECT() {return 'SELECT Id,Nom,Description,DegatDes,DegatPrimaire FROM arme';  }
+	public static function getSELECT() {return 'SELECT Id,IdUser,Nom,Description,DegatDes,DegatPrimaire FROM arme';  }
 
 	public static function SQLInsert(array $valeurs){
-		$req = 'INSERT INTO arme (Nom,Description,DegatDes,DegatPrimaire) VALUES(?,?,?,?)';
+		$req = 'INSERT INTO arme (Nom,Description,DegatDes,DegatPrimaire,IdUser) VALUES(?,?,?,?,?)';
 		return SI::getSI()->SGBDexecuteQuery($req,$valeurs);
 	}
 
