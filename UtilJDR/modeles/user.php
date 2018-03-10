@@ -6,6 +6,7 @@ class User extends Element{
 	public static function ajouterObjet($ligne){
 		//créer (instancier) la liste si nécessaire
 		if (static::$o_INSTANCES ==null){static::$o_INSTANCES = new Users();}
+
 		//voir si l'objet existe avec la clef
 		$tmp = static::$o_INSTANCES->getObject($ligne[static::champID()]);
 		if($tmp!=null){return $tmp;}
@@ -28,7 +29,7 @@ class User extends Element{
 		$tmp = static::$o_INSTANCES->getObject($id);
 		if($tmp!=null) {return $tmp;}
 		//sinon pas trouver; chercher dans la BDD
-		$req = static::getSELECT().' where Id =?';
+		$req = static::getSELECT().' where Id = ?';
 		//echo "<br/>recherche $id";
 		$ligne = SI::getSI()->SGBDgetLigne($req, $id);
 		return static::ajouterObjet($ligne);
@@ -63,12 +64,12 @@ class User extends Element{
 
 	public static function Authentification($login,$mdp){
 
-		$requete =static::getSELECT()." where Email ='".$login."'and Mdp = '".md5($mdp)."'";
-		$ligne = SI::getSI()->SGBDgetuneLigne($requete);
+		$valeurs = array($login,md5($mdp));
+		$requete =static::getSELECT()." where Email = ? and Mdp = ? ";
+		$ligne = SI::getSI()->SGBDgetuneLigneValeur($requete,$valeurs);
 		if($ligne == null){return null;}
 
-		$tmp = static::ajouterObjet($ligne);
-		return $tmp;
+		return $ligne['Id'];
 
 	}
 

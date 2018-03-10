@@ -101,29 +101,17 @@ class Inventaire extends Element{
 		echo'<td>Nom</td>';
 		echo'<td>Description</td>';
 		echo'<td>Bouclier</td>';
+		echo'<td>Effet</td>';
 
 		echo'</tr>';
 		$casque = armure::mustFind($this->getIdCasque());
-		echo '<tr>';
-		echo '<td></td>';
-		echo '<td>'.$casque->getNom().'</td>';
-		echo '<td>'.$casque->getDescription().'</td>';
-		echo '<td>'.$casque->getBouclier().'</td>';
-		echo '</tr>';
+		$casque->displayRow();
+
 		$armure = armure::mustFind($this->getIdArmure());
-		echo '<tr>';
-		echo '<td></td>';
-		echo '<td>'.$armure->getNom().'</td>';
-		echo '<td>'.$armure->getDescription().'</td>';
-		echo '<td>'.$armure->getBouclier().'</td>';
-		echo '</tr>';
+		$armure->displayRow();
+
 		$bouclier = armure::mustFind($this->getIdBouclier());
-		echo '<tr>';
-		echo '<td></td>';
-		echo '<td>'.$bouclier->getNom().'</td>';
-		echo '<td>'.$bouclier->getDescription().'</td>';
-		echo '<td>'.$bouclier->getBouclier().'</td>';
-		echo '</tr>';
+		$bouclier->displayRow();
 
 		echo '</table>';
 
@@ -137,13 +125,7 @@ class Inventaire extends Element{
 		echo'</tr>';
 
 		$armecac = arme::mustFind($this->getIdArmeCac());
-		echo'<tr>';
-		echo '<td></td>';
-		echo '<td>'.$armecac->getNom().'</td>';
-		echo '<td>'.$armecac->getDescription().'</td>';
-		echo '<td>'.$armecac->getDegatDes().'</td>';
-		echo '<td>'.$armecac->getDegatPrimaire().'</td>';
-		echo'</tr>';
+		$armecac->displayRow();
 		echo '</table>';
 
 		echo'<table class="table table-condensed">';
@@ -151,18 +133,13 @@ class Inventaire extends Element{
 		echo'<td>Arme distance</td>';
 		echo'<td>Nom</td>';
 		echo'<td>Description</td>';
+		echo'<td>Effet</td>';
 		echo'<td>DegatDes</td>';
 		echo'<td>DegatPrimaire</td>';
 		echo'</tr>';
 
 		$armedist = arme::mustFind($this->getIdArmeDist());
-		echo'<tr>';
-		echo '<td></td>';
-		echo '<td>'.$armedist->getNom().'</td>';
-		echo '<td>'.$armedist->getDescription().'</td>';
-		echo '<td>'.$armedist->getDegatDes().'</td>';
-		echo '<td>'.$armedist->getDegatPrimaire().'</td>';
-		echo '</tr>';
+		$armedist->displayRow();
 
 
 		echo '</table>';
@@ -180,40 +157,20 @@ class Inventaire extends Element{
 		echo'<td>Degat</td>';
 		echo'</tr>';
 		$sort1 = sort::mustFind($this->getIdSort1());
-		echo '<tr>';
-		echo '<td>'.$sort1->getNom().'</td>';
-		echo '<td>'.$sort1->getDescription().'</td>';
-		echo '<td>'.$sort1->getPM().'</td>';
-		echo '<td>'.$sort1->getDegat().'</td>';
-		echo '</tr>';
-		$sort2 = sort::mustFind($this->getIdSort1());
-		echo '<tr>';
-		echo '<td>'.$sort2->getNom().'</td>';
-		echo '<td>'.$sort2->getDescription().'</td>';
-		echo '<td>'.$sort2->getPM().'</td>';
-		echo '<td>'.$sort2->getDegat().'</td>';
-		echo '</tr>';
-		$sort3 = sort::mustFind($this->getIdSort1());
-		echo '<tr>';
-		echo '<td>'.$sort3->getNom().'</td>';
-		echo '<td>'.$sort3->getDescription().'</td>';
-		echo '<td>'.$sort3->getPM().'</td>';
-		echo '<td>'.$sort3->getDegat().'</td>';
-		echo '</tr>';
-		$sort4 = sort::mustFind($this->getIdSort1());
-		echo '<tr>';
-		echo '<td>'.$sort4->getNom().'</td>';
-		echo '<td>'.$sort4->getDescription().'</td>';
-		echo '<td>'.$sort4->getPM().'</td>';
-		echo '<td>'.$sort4->getDegat().'</td>';
-		echo '</tr>';
-		$sort5 = sort::mustFind($this->getIdSort1());
-		echo '<tr>';
-		echo '<td>'.$sort5->getNom().'</td>';
-		echo '<td>'.$sort5->getDescription().'</td>';
-		echo '<td>'.$sort5->getPM().'</td>';
-		echo '<td>'.$sort5->getDegat().'</td>';
-		echo '</tr>';
+		$sort1->displayRow();
+
+		$sort2 = sort::mustFind($this->getIdSort2());
+		$sort2->displayRow();
+
+		$sort3 = sort::mustFind($this->getIdSort3());
+		$sort3->displayRow();
+
+		$sort4 = sort::mustFind($this->getIdSort4());
+		$sort4->displayRow();
+
+		$sort5 = sort::mustFind($this->getIdSort5());
+		$sort5->displayRow();
+
 
 
 		echo '</table>';
@@ -242,7 +199,9 @@ class Inventaire extends Element{
 		return SI::getSI()->SGBDexecuteQuery($req,$valeurs);
 	}
 	public static function addSort1(array $valeurs){
+		var_dump($valeurs);
 		$req = 'UPDATE inventaire SET IdSort1=? WHERE Id=?';
+		var_dump($req);
 		return SI::getSI()->SGBDexecuteQuery($req,$valeurs);
 	}
 	public static function addSort2(array $valeurs){

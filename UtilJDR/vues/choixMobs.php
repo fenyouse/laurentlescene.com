@@ -2,7 +2,7 @@
 
 
     <h4>Choisir un ennemie :</h4>
-    <form id="carform" class="form-inline" method="post" action="http://localhost/laurentlescene.com/UtilJDR/index.php?a=4">
+    <form id="carform" class="form-inline" method="post" action="http://laurentlescene.com/UtilJDR/index.php?a=4">
       <?php
 
       			$lesMobs->SELECT();

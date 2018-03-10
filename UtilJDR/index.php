@@ -1,3 +1,11 @@
+<?php
+session_start();
+//référencer les classes utiles
+require_once 'modeles/si.php';
+//recupération du SI, le seul le singleton
+$MonSI = SI::getSI();
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,13 +30,10 @@
 
 <?php
 
-session_start();
-//référencer les classes utiles
-require_once 'modeles/si.php';
-//recupération du SI, le seul le singleton
-$MonSI = SI::getSI();
+
+
 //var_dump($MonSI);//montrer l'id de l'objet
-var_dump($_SESSION);
+//var_dump($_SESSION);
 //var_dump($_POST);
 
   if (isset($_GET['a'])) {

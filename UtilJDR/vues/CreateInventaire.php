@@ -44,6 +44,14 @@
             <input type="text" class="form-control" name="Description" placeholder="Description">
         </div>
         <div class="form-group
+         <?php if($erreurArme!=""){
+          echo('has-error');
+        }
+        ?>">
+           <label class="sr-only" >Effet</label>
+           <input type="text" class="form-control" name="Effet" placeholder="Effet">
+         </div>
+        <div class="form-group
         <?php if($erreurArme!=""){
            echo('has-error');
          }
@@ -84,6 +92,14 @@
             <label  class="sr-only">Description</label>
             <input type="text" class="form-control" name="Description" placeholder="Description">
         </div>
+        <div class="form-group
+         <?php if($erreurArme!=""){
+          echo('has-error');
+        }
+        ?>">
+           <label class="sr-only" >Effet</label>
+           <input type="text" class="form-control" name="Effet" placeholder="Effet">
+         </div>
         <div class="form-group
         <?php if($erreurArmure!=""){
            echo('has-error');

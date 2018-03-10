@@ -2,7 +2,7 @@
 
 
     <h4>Choisir un personnage :</h4>
-    <form class="form-inline" method="post" action="http://localhost/laurentlescene.com/UtilJDR/index.php?a=3">
+    <form class="form-inline" method="post" action="http://laurentlescene.com/UtilJDR/index.php?a=3">
       <?php
       			$lesPerso->SELECT();
       ?>

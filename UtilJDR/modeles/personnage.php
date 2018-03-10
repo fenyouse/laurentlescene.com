@@ -194,7 +194,6 @@ class personnage extends Element{
 
 	public static function SQLInsert(array $valeurs){
 		$req = 'INSERT INTO personnage (Nom,Prenom,Pseudo,Race,Classe,Niveau,PV,PM,Puissance,Finnesse,Social,Mental,Argent,IdInventaire,IdUser) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
-		var_dump($req);
 		return SI::getSI()->SGBDexecuteQuery($req,$valeurs);
 	}
 

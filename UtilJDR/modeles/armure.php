@@ -61,23 +61,28 @@ class Armure extends Element{
 		return $this->getField('Bouclier');
 	}
 
+	public function getEffet(){
+		return $this->getField('effet');
+	}
 	/******************************
 	IMSORTANT : 	toute classe dérivée non abstraite doit avoir le code pour
 
 	******************************/
 	public static function champID() {return 'Id';}
-	public static function getSELECT() {return 'SELECT Id,IdUser,Nom,Description,Bouclier FROM armure';  }
+	public static function getSELECT() {return 'SELECT Id,IdUser,Nom,Description,Bouclier,effet FROM armure';  }
 
 	public static function SQLInsert(array $valeurs){
-		$req = 'INSERT INTO armure (Nom,Description,Bouclier,IdUser) VALUES(?,?,?,?)';
+		$req = 'INSERT INTO armure (Nom,Description,Bouclier,effet,IdUser) VALUES(?,?,?,?,?)';
 		return SI::getSI()->SGBDexecuteQuery($req,$valeurs);
 	}
 
 	public function displayRow(){
 		echo '<tr>';
+		echo '<td></td>';
 		echo '<td>'.$this->getNom().'</td>';
 		echo '<td>'.$this->getDescription().'</td>';
 		echo '<td>'.$this->getBouclier().'</td>';
+		echo '<td>'.$this->getEffet().'</td>';
 		echo '</tr>';
 
 	}
@@ -125,6 +130,7 @@ class Armures extends Pluriel{
 		echo'<td>Nom</td>';
 		echo'<td>Description</td>';
 		echo'<td>Bouclier</td>';
+		echo'<td>Effet</td>';
 
 		echo'</tr>';
 		foreach ($this->getArray() as $uneArmure) {

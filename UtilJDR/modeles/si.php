@@ -45,6 +45,18 @@ class SI {
 		$work->execute();
 		return $work->fetch();
 	}
+	public function SGBDgetuneLigneValeur($req,$valeurs){
+		$work = $this->SGBDgetPrepare($req);
+		$i=0;
+		foreach ($valeurs as &$v) {
+			$i++;
+			//echo "$i : $v <br/>";
+			$work->bindParam($i, $v);
+		}
+
+		$work->execute();
+		return $work->fetch();
+	}
 
 	public function SGBDexecuteQuery($requete, array $valeurs) {
 		$work = $this->SGBDgetPrepare($requete) ;

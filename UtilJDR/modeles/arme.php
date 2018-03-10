@@ -65,25 +65,31 @@ class Arme extends Element{
 		return $this->getField('DegatPrimaire');
 	}
 
+	public function getEffet(){
+		return $this->getField('effet');
+	}
+
 	/******************************
 	IMSORTANT : 	toute classe dérivée non abstraite doit avoir le code pour
 
 	******************************/
 	public static function champID() {return 'Id';}
-	public static function getSELECT() {return 'SELECT Id,IdUser,Nom,Description,DegatDes,DegatPrimaire FROM arme';  }
+	public static function getSELECT() {return 'SELECT Id,IdUser,Nom,Description,DegatDes,DegatPrimaire,effet FROM arme';  }
 
 	public static function SQLInsert(array $valeurs){
-		$req = 'INSERT INTO arme (Nom,Description,DegatDes,DegatPrimaire,IdUser) VALUES(?,?,?,?,?)';
+		$req = 'INSERT INTO arme (Nom,Description,DegatDes,DegatPrimaire,effet,IdUser) VALUES(?,?,?,?,?,?)';
 		return SI::getSI()->SGBDexecuteQuery($req,$valeurs);
 	}
 
 	public function displayRow(){
-		echo '<tr>';
+		echo'<tr>';
+		echo '<td></td>';
 		echo '<td>'.$this->getNom().'</td>';
 		echo '<td>'.$this->getDescription().'</td>';
+		echo '<td>'.$this->getEffet().'</td>';
 		echo '<td>'.$this->getDegatDes().'</td>';
 		echo '<td>'.$this->getDegatPrimaire().'</td>';
-		echo '</tr>';
+		echo'</tr>';
 
 	}
 	public function option(){
@@ -127,6 +133,7 @@ class Armes extends Pluriel{
 		echo'<tr>';
 		echo'<td>Nom</td>';
 		echo'<td>Description</td>';
+		echo'<td>Effet</td>';
 		echo'<td>DegatDes</td>';
 		echo'<td>DegatPrimaire</td>';
 

@@ -22,8 +22,8 @@ if (isset($_POST['Quantite'])&&isset($_POST['Nom'])) {
 
 //add Arme
 if (isset($_POST['DegatPrimaire'])&&isset($_POST['Nom'])&&isset($_POST['Description'])&&isset($_POST['DegatDes'])) {
-  if (($_POST['DegatPrimaire']!='')&&($_POST['Nom'])!=''&&($_POST['Description'])!=''&&($_POST['DegatDes'])!='') {
-      $Create = Arme::SQLInsert(array($_POST['Nom'],$_POST['Description'],$_POST['DegatDes'],$_POST['DegatPrimaire'],$_SESSION['User']));
+  if (($_POST['DegatPrimaire']!='')&&($_POST['Nom'])!=''&&($_POST['Description'])!=''&&($_POST['Effet'])!=''&&($_POST['DegatDes'])!='') {
+      $Create = Arme::SQLInsert(array($_POST['Nom'],$_POST['Description'],$_POST['DegatDes'],$_POST['DegatPrimaire'],$_POST['Effet'],$_SESSION['User']));
       var_dump($Create);
   }else {
     $erreurArme='Remplir champs';
@@ -31,9 +31,9 @@ if (isset($_POST['DegatPrimaire'])&&isset($_POST['Nom'])&&isset($_POST['Descript
 }
 
 //add Armure
-if (isset($_POST['Bouclier'])&&isset($_POST['Description'])&&isset($_POST['Nom'])) {
-  if (($_POST['Bouclier'])!=''&&($_POST['Description'])!=''&&($_POST['Nom'])!='') {
-    $Create = Armure::SQLInsert(array($_POST['Nom'],$_POST['Description'],$_POST['Bouclier'],$_SESSION['User']));
+if (isset($_POST['Bouclier'])&&isset($_POST['Description'])&&isset($_POST['Effet'])&&isset($_POST['Nom'])) {
+  if (($_POST['Bouclier'])!=''&&($_POST['Description'])!=''&&($_POST['Effet'])!=''&&($_POST['Nom'])!='') {
+    $Create = Armure::SQLInsert(array($_POST['Nom'],$_POST['Description'],$_POST['Bouclier'],$_POST['Effet'],$_SESSION['User']));
     var_dump($Create);
   }else {
     $erreurArmure='Remplir champs';

@@ -11,7 +11,7 @@ abstract class Element {
 	protected function getField($nom) { return $this->ligne[$nom] ; }
 
 	//---------- renvoie l'ID.
-	public function getID()           { return $this->ligne[static::champID()]; }
+	public function getID()  { return $this->ligne[static::champID()]; }
 
 	//---------- renvoie le getselect suivi de 'WHERE condition sur clé primaire'
 	public static function getSELECTOne() {

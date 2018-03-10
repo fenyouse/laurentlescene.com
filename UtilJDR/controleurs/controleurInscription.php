@@ -1,5 +1,5 @@
 <?php
-require_once 'Modeles/user.php';
+require_once 'modeles/user.php';
 
 $erreur = "";
 
@@ -34,5 +34,5 @@ if(isset($_POST) && !empty($_POST['login']) && !empty($_POST['mdp'])&& !empty($_
 
 }
 
-require_once 'Vues/Inscription.php';
+require_once 'vues/Inscription.php';
 ?>

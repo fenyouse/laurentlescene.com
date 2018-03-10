@@ -4,9 +4,9 @@
   if (isset($_SESSION['NbPersoAfficher'])) {
     foreach ($_SESSION['NbPersoAfficher'] as $key => $value) {
 
-      echo '<iframe width="300" height="1100px" src="http://localhost/laurentlescene.com/UtilJDR?a=3"></iframe>';
-      echo '<iframe width="300" height="1100px" src="http://localhost/laurentlescene.com/UtilJDR?a=3"></iframe>';
-      echo '<iframe width="300" height="1100px" src="http://localhost/laurentlescene.com/UtilJDR?a=3"></iframe>';
+      echo '<iframe width="300" height="1100px" src="http://laurentlescene.com/UtilJDR?a=3"></iframe>';
+      echo '<iframe width="300" height="1100px" src="http://laurentlescene.com/UtilJDR?a=3"></iframe>';
+      echo '<iframe width="300" height="1100px" src="http://laurentlescene.com/UtilJDR?a=3"></iframe>';
 
     }
   }
@@ -30,9 +30,9 @@
   if (isset($_SESSION['NbMobAfficher'])) {
     foreach ($_SESSION['NbMobAfficher'] as $key => $value) {
 
-      echo '<iframe width="300" height="600px" src="http://localhost/laurentlescene.com/UtilJDR?a=4"></iframe>';
-      echo '<iframe width="300" height="600px" src="http://localhost/laurentlescene.com/UtilJDR?a=4"></iframe>';
-      echo '<iframe width="300" height="600px" src="http://localhost/laurentlescene.com/UtilJDR?a=4"></iframe>';
+      echo '<iframe width="300" height="600px" src="http://laurentlescene.com/UtilJDR?a=4"></iframe>';
+      echo '<iframe width="300" height="600px" src="http://laurentlescene.com/UtilJDR?a=4"></iframe>';
+      echo '<iframe width="300" height="600px" src="http://laurentlescene.com/UtilJDR?a=4"></iframe>';
 
     }
   }
@@ -48,9 +48,9 @@
 
 <div class="well center-block text-center" id="DesPartie" >
   <p>Gestion dés</p>
-  <iframe width="300" height="420px" src="http://localhost/laurentlescene.com/UtilJDR?a=1"></iframe>
+  <iframe width="300" height="420px" src="http://laurentlescene.com/UtilJDR?a=1"></iframe>
 </div>
 <div class="well center-block text-center" id="MusiquePartie" >
   <p>Gestion Musique</p>
-  <iframe width="300" height="410px" src="http://localhost/laurentlescene.com/UtilJDR?a=2"></iframe>
+  <iframe width="300" height="410px" src="http://laurentlescene.com/UtilJDR?a=2"></iframe>
 </div>

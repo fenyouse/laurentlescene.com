@@ -36,6 +36,7 @@ CREATE TABLE arme (
   Description text(256) NOT NULL,
   DegatDes int(50),
   DegatPrimaire int(50),
+  effet text(256),
   Poids int(255),
   PRIMARY KEY (Id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -46,6 +47,7 @@ CREATE TABLE armure (
   Nom varchar(10) NOT NULL,
   Description text(256) NOT NULL,
   Bouclier int(50),
+  effet text(256),
   Poids int(255),
   PRIMARY KEY (Id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

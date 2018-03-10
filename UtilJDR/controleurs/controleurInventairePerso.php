@@ -30,7 +30,9 @@ if (isset($_POST['idSelected'])) {
 
 }
 if (isset($_POST['addSort1'])) {
-  inventaire::addSort1(array($_POST['SortSelected'],$_SESSION['idSelected']));
+  $Perso= personnage::mustFind($_SESSION['idSelected']);
+  $test = inventaire::addSort1(array($_POST['SortSelected'],$Perso->getIdInventaire()));
+  //var_dump($_POST['SortSelected'],$_SESSION['idSelected'],$test);
 }
 if (isset($_POST['addSort2'])) {
   inventaire::addSort2(array($_POST['SortSelected'],$_SESSION['idSelected']));

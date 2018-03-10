@@ -15,31 +15,13 @@
 
 </script>
 <script type="text/javascript">
-var des4 = 1;
-var des6 = 1;
-var des8 = 1;
-var des10 = 1;
-var des12 = 1;
-var des20 = 1;
-var des100 = 1;
+var dices = [4,6,8,10,12,20,100];
 
 function onClick() {
-  des4 = getRandomInt(4)+1;
-  des6 = getRandomInt(6)+1;
-  des8 = getRandomInt(8)+1;
-  des10 = getRandomInt(10)+1;
-  des12 = getRandomInt(12)+1;
-  des20 = getRandomInt(20)+1;
-  des100 = getRandomInt(100)+1;
-  document.getElementById("des4").innerHTML = des4;
-  document.getElementById("des6").innerHTML = des6;
-  document.getElementById("des8").innerHTML = des8;
-  document.getElementById("des10").innerHTML = des10;
-  document.getElementById("des12").innerHTML = des12;
-  document.getElementById("des20").innerHTML = des20;
-  document.getElementById("des100").innerHTML = des100;
-};
+  for(var i = 0; i < dices.length; i++)
+    eval('document.getElementById("des'+dices[i]+'").innerHTML = getRandomInt('+dices[i]+');');
+}
 function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-};
+  return Math.floor(Math.random() * Math.floor(max)+1);
+}
 </script>

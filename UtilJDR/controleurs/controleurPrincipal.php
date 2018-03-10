@@ -2,6 +2,11 @@
 require_once 'modeles/element.php';
 require_once 'modeles/pluriel.php';
 
+if(isset($_POST["Deconnexion"])) {
+  session_destroy();
+  header ('Location:index.php');
+}
+
 if(isset($_POST["Dés"])) {
   $_SESSION['Page']='Dés';
   require_once 'controleurs/controleurDes.php';
@@ -39,10 +44,7 @@ if(isset($_POST["Connexion"])) {
   $_SESSION['Page']='Connexion';
   require_once 'controleurs/controleurConnexion.php';
 }
-if(isset($_POST["Deconnexion"])) {
-  session_destroy();
-  header ('Location:index.php');
-}
+
 if(isset($_POST["Inscription"])) {
   $_SESSION['Page']='Inscription';
   require_once 'controleurs/controleurInscription.php';

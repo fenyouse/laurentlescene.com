@@ -1,6 +1,5 @@
 <?php
-require_once 'Modeles/user.php';
-
+require_once 'modeles/user.php';
 $erreur = "";
 
 if(isset($_POST['login'])){
@@ -10,11 +9,10 @@ if(isset($_POST['login'])){
 if(isset($_POST) && !empty($_POST['login']) && !empty($_POST['mdp'])){
 
   $UserTmp = User::Authentification($_POST["login"],$_POST["mdp"]);
-  //var_dump($ElecteurTmp);
+  //var_dump($UserTmp);
   if ($UserTmp!=null) {
-
-    $user= User::mustFind( User::Authentification($_POST["login"],$_POST["mdp"])->getId());
-    $_SESSION['User'] = $UserTmp->getId();
+    //$user= User::mustFind( User::Authentification($_POST["login"],$_POST["mdp"]);
+    $_SESSION['User'] = $UserTmp;
     $_SESSION['Page']='Dés';
     header ('Location:index.php');
 
@@ -27,5 +25,5 @@ if(isset($_POST) && !empty($_POST['login']) && !empty($_POST['mdp'])){
 
 }
 
-require_once 'Vues/Connexion.php';
+require_once 'vues/connexion.php';
 ?>
